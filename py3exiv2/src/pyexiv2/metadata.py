@@ -524,7 +524,9 @@ class ImageMetadata(MutableMapping):
         except KeyError:
             pass
 
-    iptc_charset = property(fget=_get_iptc_charset, fset=_set_iptc_charset,
+    iptc_charset = property(fget=_get_iptc_charset, 
+                            fset=_set_iptc_charset,
                             fdel=_del_iptc_charset,
-                            doc='An optional character set the IPTC data is encoded in.')
+                            doc='An optional character set the IPTC data'\
+                                ' is encoded in.')
 
