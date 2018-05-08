@@ -18,3 +18,4 @@ samples
 samples/*
 rpmbuild-py3exiv2
 rpmbuild-py3exiv2/*
+exiv2
