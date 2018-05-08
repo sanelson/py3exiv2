@@ -552,7 +552,16 @@ class ImageMetadata(MutableMapping):
         return speed
 
     def get_focal_length(self):
-        pass
+        try:
+            f = self['Exif.Photo.FocalLength'].value
+            if f.denominator:
+                return round(f.numerator / f.denominator, 2)
+
+            else:
+                return float(f.numerator)
+
+        except Exception as why:
+            print("focale error: %s" % why)
 
     def get_aperture(self):
         pass
