@@ -47,7 +47,7 @@ from pyexiv2.iptc import IptcTag
 from pyexiv2.xmp import XmpTag
 from pyexiv2.preview import Preview
 
-
+print('Imported !')
 class ImageMetadata(MutableMapping):
     """A container for all the metadata embedded in an image.
 
@@ -529,4 +529,34 @@ class ImageMetadata(MutableMapping):
                             fdel=_del_iptc_charset,
                             doc='An optional character set the IPTC data'\
                                 ' is encoded in.')
+
+    # Some convenient functions -------------------------------------------
+    def get_iso(self):
+        try:
+            return self["Exif.Photo.ISOSpeedRatings"].value
+        except Exception as why:
+            print("ISO error: %s" % why)
+
+    def get_shutter_speed(self, format=False):
+        try:
+            speed = self['Exif.Photo.ExposureTime'].value 
+        except Exception as why:
+            print("shutter speed error: %s" % why)
+            return
+
+        if format == float:
+            if speed.denominator:
+                return speed.numerator / speed.denominator
+            return float(numerator)
+
+        return speed
+
+    def get_focal_length(self):
+        pass
+
+    def get_aperture(self):
+        pass
+
+    def get_exposure_data(self, format=float):
+        pass
 
