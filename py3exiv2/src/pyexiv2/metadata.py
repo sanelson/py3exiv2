@@ -576,6 +576,16 @@ class ImageMetadata(MutableMapping):
             print("Orientation error: %s" % why)
             return 1
 
-    def get_exposure_data(self, format=float):
-        pass
+    def get_exposure_data(self, format=False):
+        data = {"iso": self.get_iso(),
+                "speed": self.get_shutter_speed(format),
+                "focal": self.get_focal_length(),
+                "aperture": self.get_aperture(),
+                "orientation": self.get_orientation()}
+
+        return data
+
+
+
+
 
