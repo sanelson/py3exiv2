@@ -564,7 +564,10 @@ class ImageMetadata(MutableMapping):
             print("focale error: %s" % why)
 
     def get_aperture(self):
-        pass
+        try:
+            return self["Exif.Photo.FNumber"].value
+        except Exception as why:
+            print("FNumber error: %s" % why)
 
     def get_exposure_data(self, format=float):
         pass
