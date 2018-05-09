@@ -569,6 +569,13 @@ class ImageMetadata(MutableMapping):
         except Exception as why:
             print("FNumber error: %s" % why)
 
+    def get_orientation(self):
+        try:
+            return self["Exif.Image.Orientation"].value
+        except Exception as why:
+            print("Orientation error: %s" % why)
+            return 1
+
     def get_exposure_data(self, format=float):
         pass
 
