@@ -532,19 +532,28 @@ class ImageMetadata(MutableMapping):
 
     # Some convenient functions -------------------------------------------
     def get_iso(self):
+        """Returns the ISO value as integer.
+
+        """
         try:
             return self["Exif.Photo.ISOSpeedRatings"].value
         except Exception as why:
             print("ISO error: %s" % why)
 
-    def get_shutter_speed(self, format=False):
+    def get_shutter_speed(self, float_=False):
+        """Returns the exposure time.
+
+        Args:
+        float_ -- if False, default, the value is returned as rational 
+                  otherwise as float
+        """
         try:
             speed = self['Exif.Photo.ExposureTime'].value 
         except Exception as why:
             print("shutter speed error: %s" % why)
             return
 
-        if format == float:
+        if float_:
             if speed.denominator:
                 return speed.numerator / speed.denominator
             return float(numerator)
@@ -552,6 +561,9 @@ class ImageMetadata(MutableMapping):
         return speed
 
     def get_focal_length(self):
+        """Returns the focal length as float.
+
+        """
         try:
             focal = self['Exif.Photo.FocalLength'].value
             if focal.denominator:
@@ -564,6 +576,9 @@ class ImageMetadata(MutableMapping):
             print("focale error: %s" % why)
 
     def get_aperture(self):
+        """Return the fNumber as float.
+
+        """
         try:
             fnumber = self["Exif.Photo.FNumber"].value
             if fnumber.denominator:
@@ -575,15 +590,31 @@ class ImageMetadata(MutableMapping):
             print("FNumber error: %s" % why)
 
     def get_orientation(self):
+        """Returns the orientation of the image as integer
+
+        """
         try:
             return self["Exif.Image.Orientation"].value
         except Exception as why:
             print("Orientation error: %s" % why)
             return 1
 
-    def get_exposure_data(self, format=False):
+    def get_exposure_data(self, float_=False):
+        """Return the exposure parameters of the image.
+
+        The values are returned as a dict which content:
+            "iso": the ISO value
+            "speed": the exposure time
+            "focal": the focal length
+            "aperture" the fNumber
+            "orientation":the orientation of the image
+
+        Args:
+        float_ -- if False, default, the value of the exposure time is returned 
+                  as rational otherwise as float
+        """
         data = {"iso": self.get_iso(),
-                "speed": self.get_shutter_speed(format),
+                "speed": self.get_shutter_speed(float_),
                 "focal": self.get_focal_length(),
                 "aperture": self.get_aperture(),
                 "orientation": self.get_orientation()}
