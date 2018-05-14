@@ -602,12 +602,14 @@ class ImageMetadata(MutableMapping):
     def get_exposure_data(self, float_=False):
         """Returns the exposure parameters of the image.
 
-        The values are returned as a dict which content:
+        The values are returned as a dict which contains:
             "iso": the ISO value
             "speed": the exposure time
             "focal": the focal length
             "aperture": the fNumber
             "orientation": the orientation of the image
+
+        When a tag is not set, the value is None
 
         Args:
         float_ -- if False, default, the value of the exposure time is returned 
@@ -622,6 +624,18 @@ class ImageMetadata(MutableMapping):
         return data
 
     def get_rights_data(self):
+        """Returns the author and copyright info.
+
+        The values are returned as a dict which contains:
+            "creator": the value of Xmp.dc.creator
+            "artist": the value of Exif.Image.Artist
+            "rights": the value of Xmp.dc.rights
+            "copyright": the value of Exif.Image.Copyright
+            "marked": the value of Xmp.xmpRights.Marked
+            "usage": the value of Xmp.xmpRights.UsageTerms
+
+        When a tag is not set, the value is None
+        """
         tags = [('creator', 'Xmp.dc.creator'), 
                 ('artist', 'Exif.Image.Artist'),
                 ('rights', 'Xmp.dc.rights'), 
