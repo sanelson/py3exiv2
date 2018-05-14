@@ -47,7 +47,7 @@ from pyexiv2.iptc import IptcTag
 from pyexiv2.xmp import XmpTag
 from pyexiv2.preview import Preview
 
-print('Imported !')
+
 class ImageMetadata(MutableMapping):
     """A container for all the metadata embedded in an image.
 
@@ -606,8 +606,8 @@ class ImageMetadata(MutableMapping):
             "iso": the ISO value
             "speed": the exposure time
             "focal": the focal length
-            "aperture" the fNumber
-            "orientation":the orientation of the image
+            "aperture": the fNumber
+            "orientation": the orientation of the image
 
         Args:
         float_ -- if False, default, the value of the exposure time is returned 
@@ -621,7 +621,21 @@ class ImageMetadata(MutableMapping):
 
         return data
 
+    def get_rights_data(self):
+        tags = [('creator', 'Xmp.dc.creator'), 
+                ('artist', 'Exif.Image.Artist'),
+                ('rights', 'Xmp.dc.rights'), 
+                ('copyright', 'Exif.Image.Copyright'),
+                ('marked', 'Xmp.xmpRights.Marked'), 
+                ('usage', 'Xmp.xmpRights.UsageTerms')]
+        rights = {}
+        for tag in tags:
+            try:
+                rights[tag[0]] = self[tag[1]].value
+            except KeyError:
+                print('Tag %s not set' % tag[1])
+                rights[tag[0]] = None
 
-
+        return rights
 
 
