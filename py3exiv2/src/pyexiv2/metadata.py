@@ -537,8 +537,8 @@ class ImageMetadata(MutableMapping):
         """
         try:
             return self["Exif.Photo.ISOSpeedRatings"].value
-        except Exception as why:
-            print("ISO error: %s" % why)
+        except KeyError:
+            return
 
     def get_shutter_speed(self, float_=False):
         """Returns the exposure time as rational or float.
@@ -549,8 +549,7 @@ class ImageMetadata(MutableMapping):
         """
         try:
             speed = self['Exif.Photo.ExposureTime'].value 
-        except Exception as why:
-            print("shutter speed error: %s" % why)
+        except KeyError:
             return
 
         if float_:
@@ -572,8 +571,8 @@ class ImageMetadata(MutableMapping):
             else:
                 return float(focal.numerator)
 
-        except Exception as why:
-            print("focale error: %s" % why)
+        except KeyError:
+            return
 
     def get_aperture(self):
         """Return the fNumber as float.
@@ -586,17 +585,17 @@ class ImageMetadata(MutableMapping):
 
             else:
                 return float(fnumber.numerator)
-        except Exception as why:
-            print("FNumber error: %s" % why)
+        except KeyError:
+            return
 
     def get_orientation(self):
-        """Returns the orientation of the image as integer
+        """Returns the orientation of the image as integer.
 
+        If the tag is not set, the value 1 is returned.
         """
         try:
             return self["Exif.Image.Orientation"].value
-        except Exception as why:
-            print("Orientation error: %s" % why)
+        except KeyError:
             return 1
 
     def get_exposure_data(self, float_=False):
@@ -647,7 +646,6 @@ class ImageMetadata(MutableMapping):
             try:
                 rights[tag[0]] = self[tag[1]].value
             except KeyError:
-                print('Tag %s not set' % tag[1])
                 rights[tag[0]] = None
 
         return rights
