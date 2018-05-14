@@ -541,7 +541,7 @@ class ImageMetadata(MutableMapping):
             print("ISO error: %s" % why)
 
     def get_shutter_speed(self, float_=False):
-        """Returns the exposure time.
+        """Returns the exposure time as rational or float.
 
         Args:
         float_ -- if False, default, the value is returned as rational 
@@ -600,7 +600,7 @@ class ImageMetadata(MutableMapping):
             return 1
 
     def get_exposure_data(self, float_=False):
-        """Return the exposure parameters of the image.
+        """Returns the exposure parameters of the image.
 
         The values are returned as a dict which content:
             "iso": the ISO value
