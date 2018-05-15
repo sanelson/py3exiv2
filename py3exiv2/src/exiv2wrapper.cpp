@@ -1,7 +1,7 @@
 // *****************************************************************************
 /*
  * Copyright (C) 2006-2012 Olivier Tilloy <olivier@tilloy.net>
- * Copyright (C) 2015-2016 Vincent Vande Vyvre <vincent.vandevyvre@oqapy.eu>
+ * Copyright (C) 2015-2019 Vincent Vande Vyvre <vincent.vandevyvre@oqapy.eu>
  *
  * This file is part of the pyexiv2 distribution.
  *

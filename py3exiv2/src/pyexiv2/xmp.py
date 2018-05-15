@@ -30,8 +30,8 @@ XMP specific code.
 
 import libexiv2python
 
-from pyexiv2.utils import FixedOffset, is_fraction, make_fraction, \
-                          GPSCoordinate, DateTimeFormatter
+from pyexiv2.utils import (FixedOffset, is_fraction, make_fraction,
+                          GPSCoordinate, DateTimeFormatter)
 
 import datetime
 import re
