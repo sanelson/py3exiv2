@@ -575,7 +575,7 @@ class ImageMetadata(MutableMapping):
             return
 
     def get_aperture(self):
-        """Return the fNumber as float.
+        """Returns the fNumber as float.
 
         """
         try:
@@ -608,7 +608,7 @@ class ImageMetadata(MutableMapping):
             "aperture": the fNumber
             "orientation": the orientation of the image
 
-        When a tag is not set, the value is None
+        When a tag is not set, the value will be None
 
         Args:
         float_ -- if False, default, the value of the exposure time is returned 
@@ -633,7 +633,7 @@ class ImageMetadata(MutableMapping):
             "marked": the value of Xmp.xmpRights.Marked
             "usage": the value of Xmp.xmpRights.UsageTerms
 
-        When a tag is not set, the value is None
+        When a tag is not set, the value will be None
         """
         tags = [('creator', 'Xmp.dc.creator'), 
                 ('artist', 'Exif.Image.Artist'),

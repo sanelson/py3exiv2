@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Developers &mdash; py3exiv2 0.1.0 documentation</title>
+    <title>Developers &mdash; py3exiv2 0.3.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1.0',
+        VERSION:     '0.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,11 +23,11 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="py3exiv2 0.1.0 documentation" href="index.html" />
+    <link rel="top" title="py3exiv2 0.3.0 documentation" href="index.html" />
     <link rel="prev" title="Tutorial" href="tutorial.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -36,14 +36,14 @@
         <li class="right" >
           <a href="tutorial.html" title="Tutorial"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">py3exiv2 0.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="developers">
 <h1>Developers<a class="headerlink" href="#developers" title="Permalink to this headline">¶</a></h1>
@@ -70,8 +70,8 @@ issue the following command in a terminal:</p>
 <p>To build py3exiv2:</p>
 <ul class="simple">
 <li><cite>python-all-dev</cite> (≥ 3.2)</li>
-<li><cite>libexiv2-dev</cite> (≥ 0.20)        # <cite>exiv2-devel</cite> on fedora</li>
-<li><cite>libboost-python-dev</cite> (≥ 1.35) # <cite>boost-devel</cite> on fedora</li>
+<li><cite>libexiv2-dev</cite> (≥ 0.20)</li>
+<li><cite>libboost-python-dev</cite> (≥ 1.45)</li>
 <li><cite>g++</cite></li>
 </ul>
 <p>Some unit tests have a dependency on
@@ -85,10 +85,6 @@ Windows installer, you will need the following dependencies:</p>
 <li><a class="reference external" href="http://7-zip.org/">7-Zip</a></li>
 <li><a class="reference external" href="http://nsis.sourceforge.net/">NSIS</a></li>
 </ul>
-<p>A typical list of packages to install on a Debian/Ubuntu system is:</p>
-<div class="highlight-python"><div class="highlight"><pre>mingw32 p7zip-full nsis
-</pre></div>
-</div>
 </div>
 <div class="section" id="building-and-installing">
 <h2>Building and installing<a class="headerlink" href="#building-and-installing" title="Permalink to this headline">¶</a></h2>
@@ -106,7 +102,7 @@ Windows installer, you will need the following dependencies:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ./build.sh
 </pre></div>
 </div>
-<p>The result of the build process is a shared library, <tt class="docutils literal"><span class="pre">libexiv2python.so</span></tt>, in the build directory:</p>
+<p>The result of the build process is a shared library, <code class="docutils literal"><span class="pre">libexiv2python.so</span></code>, in the build directory:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls build/
 $ exiv2wrapper.os  exiv2wrapper_python.os  libexiv2python.so
 </pre></div>
@@ -117,38 +113,18 @@ $ exiv2wrapper.os  exiv2wrapper_python.os  libexiv2python.so
 </div>
 <p>You will most likely need administrative privileges to the last step.</p>
 </div>
-<div class="section" id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
-<p>The top-level directory of the development branch contains a shell script named
-<tt class="docutils literal"><span class="pre">cross-compile.sh</span></tt> that retrieves all the dependencies required and
-cross-compiles py3exiv2 for Windows on a Linux host.
-Read the comments in the header of the script to know the pre-requisites.</p>
-<p>The result of the compilation is a DLL, <tt class="docutils literal"><span class="pre">libexiv2python.pyd</span></tt>, in the build
-directory. This file and the <tt class="docutils literal"><span class="pre">pyexiv2</span></tt> folder in <tt class="docutils literal"><span class="pre">src</span></tt> should be copied to
-the system-wide site directory of a Python 2.7 setup
-(typically <tt class="docutils literal"><span class="pre">C:\Python27\Lib\site-packages\</span></tt>) or to the user site directory
-(<tt class="docutils literal"><span class="pre">%APPDATA%\Python\Python27\site-packages\</span></tt>).</p>
-<p>The top-level directory of the branch also contains an NSIS installer script
-named <tt class="docutils literal"><span class="pre">win32-installer.nsi</span></tt>.
-From the top-level directory of the branch, run the following command:</p>
-<div class="highlight-python"><div class="highlight"><pre>makensis win32-installer.nsi
-</pre></div>
-</div>
-<p>This will generate a ready-to-distribute installer executable named
-<tt class="docutils literal"><span class="pre">py3exiv2-0.3-setup.exe</span></tt>.</p>
-</div>
 </div>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <p>The present documentation is generated using
 <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> from reStructuredText sources found in the
-doc/ directory. Invoke <tt class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></tt> to (re)build the HTML documentation.</p>
+doc/ directory. Invoke <code class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></code> to (re)build the HTML documentation.</p>
 <p>The index of the documentation will then be found under doc/_build/html/index.html.</p>
 </div>
 <div class="section" id="unit-tests">
 <h2>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
 <p>py3exiv2&#8217;s source comes with a battery of unit tests, in the test/ directory.
-To run them, invoke <tt class="docutils literal"><span class="pre">python3</span> <span class="pre">TestsRunner.py</span></tt>.</p>
+To run them, invoke <code class="docutils literal"><span class="pre">python3</span> <span class="pre">TestsRunner.py</span></code>.</p>
 </div>
 <div class="section" id="contributing">
 <h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
@@ -183,7 +159,7 @@ report:</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
@@ -192,7 +168,6 @@ report:</p>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#building-and-installing">Building and installing</a><ul>
 <li><a class="reference internal" href="#linux">Linux</a></li>
-<li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
@@ -205,12 +180,14 @@ report:</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="tutorial.html"
                         title="previous chapter">Tutorial</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/developers.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/developers.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -227,7 +204,7 @@ report:</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -236,12 +213,12 @@ report:</p>
         <li class="right" >
           <a href="tutorial.html" title="Tutorial"
              >previous</a> |</li>
-        <li><a href="index.html">py3exiv2 0.1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2015, Vincent Vande Vyvre.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015-2018 Vincent Vande Vyvre.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
     </div>
   </body>
 </html>

@@ -72,7 +72,14 @@ pyexiv2.metadata
 
 * :func:`copy(other, exif=True, iptc=True, xmp=True, comment=True) <copy>`
 * :func:`__delitem__(key) <__delitem__>`
+* :func:`get_aperture(self) <get_aperture>`
+* :func:`get_exposure_data(self, float_=False) <get_exposure_data>`
+* :func:`get_focal_length(self) <get_focal_length>`
+* :func:`get_iso(self) <get_iso>`
 * :func:`__getitem__(key) <__getitem__>`
+* :func:`get_orientation(self) <get_orientation>`
+* :func:`get_rights_data(self) <get_rights_data>`
+* :func:`get_shutter_speed(self, float_=False) <get_shutter_speed>`
 * :func:`read() <read>`
 * :func:`__setitem__(key) <__setitem__>`
 * :func:`write(preserve_timestamps=False) <write>`
@@ -167,6 +174,35 @@ It provides convenient methods for the manipulation of EXIF, IPTC and XMP metada
 
    Raises KeyError if the tag with the given key doesn’t exist
 
+.. function:: get_aperture(self)
+
+   Returns the fNumber as float.
+
+.. function:: get_exposure_data(self, float_=False)
+
+   Returns the exposure parameters of the image.
+
+   The values are returned as a dict which contains:
+
+      * *"iso"*: the ISO value
+      * *"speed"*: the exposure time
+      * *"focal"*: the focal length
+      * *"aperture"*: the fNumber
+      * *"orientation"*: the orientation of the image
+
+   When a tag is not set, the value will be None.
+
+   Argument:
+
+      * *float_* If False, default, the value of the exposure time is returned as rational otherwise a float is returned.
+
+.. function:: get_focal_length(self)
+
+   Returns the focal length as float.
+
+.. function:: get_iso(self)
+
+   Returns the ISO value as integer.
 
 .. function:: __getitem__(key)
 
@@ -178,6 +214,34 @@ It provides convenient methods for the manipulation of EXIF, IPTC and XMP metada
 
    Raises KeyError if the tag doesn’t exist
 
+.. function:: get_orientation(self)
+
+   Returns the orientation of the image as integer.
+
+   If the tag is not set, the value 1 is returned.
+
+.. function:: get_rights_data(self)
+
+   Returns the author and copyright info.
+
+   The values are returned as a dict which contains:
+
+      * *"creator"*: the value of Xmp.dc.creator
+      * *"artist"*: the value of Exif.Image.Artist
+      * *"rights"*: the value of Xmp.dc.rights
+      * *"copyright"*: the value of Exif.Image.Copyright
+      * *"marked"*: the value of Xmp.xmpRights.Marked
+      * *"usage"*: the value of Xmp.xmpRights.UsageTerms
+
+   When a tag is not set, the value will be None.
+
+.. function:: get_shutter_speed(self, float_=False)
+
+   Returns the exposure time as rational or float or None if the tag is not set.
+
+   Argument:
+
+      * *float_* If False, default, the value is returned as rational otherwise a float is returned
 
 .. function:: read()
 
