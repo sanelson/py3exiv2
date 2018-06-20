@@ -477,11 +477,12 @@ class ImageMetadata(MutableMapping):
 
     @property
     def buffer(self):
-        """The image buffer as a string.
-
         """
-        #XXX Deprecated
-        return
+        The image buffer as a string.
+        If metadata has been modified, the data won't be up-to-date until
+        :meth:`.write` has been called.
+        """
+        return self._image._getDataBuffer()
 
     @property
     def exif_thumbnail(self):

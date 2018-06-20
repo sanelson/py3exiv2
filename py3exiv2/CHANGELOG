@@ -1,5 +1,8 @@
 PYTHON3-EXIV2
 
+Change in 0.3.0  Thu, 17 May 2018
+ * Add some convenient functions
+
 Change in 0.2.0  Fri, 12 Aug 2016
  * Add Preview.data feature
 

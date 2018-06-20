@@ -399,7 +399,7 @@ void Image::copyMetadata(Image& other, bool exif, bool iptc, bool xmp) const
         other._image->setXmpData(*_xmpData);
 }
 
-std::string Image::getDataBuffer() const
+boost::python::object Image::getDataBuffer() const
 {
     std::string buffer;
 
@@ -450,7 +450,9 @@ std::string Image::getDataBuffer() const
     // Re-acquire the GIL
     Py_END_ALLOW_THREADS
 
-    return buffer;
+    return boost::python::object(boost::python::handle<>(
+        PyBytes_FromStringAndSize(buffer.c_str(), buffer.size())
+        ));
 }
 
 Exiv2::ByteOrder Image::getByteOrder() const

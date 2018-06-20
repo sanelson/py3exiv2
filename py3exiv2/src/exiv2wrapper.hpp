@@ -248,7 +248,7 @@ public:
     void copyMetadata(Image& other, bool exif=true, bool iptc=true, bool xmp=true) const;
 
     // Return the image data buffer.
-    std::string getDataBuffer() const;
+    boost::python::object getDataBuffer() const;
 
     // Accessors
     Exiv2::ExifData* getExifData() { return _exifData; };
