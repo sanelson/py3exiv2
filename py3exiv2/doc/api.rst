@@ -56,6 +56,7 @@ pyexiv2.metadata
 
 ..
 
+* :ref:`buffer <buffer>`
 * :ref:`comment <comment>`
 * :ref:`dimensions <dimensions>`
 * :ref:`exif_keys <exifkeys>`
@@ -105,6 +106,22 @@ It provides convenient methods for the manipulation of EXIF, IPTC and XMP metada
    See :func:`read`
 
 **Attributes**
+
+.. _buffer:
+.. attribute:: buffer
+
+   Return the image data as bytes.  This is useful to reduce disk acces, the data can be send to an image library.
+
+   Example with Pillow::
+
+   >>> from PIL import Image
+   >>> import io
+   >>> import pyexiv2
+   >>> meta = pyexiv2.ImageMetadata("lena.jpg")
+   >>> meta.read()
+   >>> byteio = io.BytesIO(meta.buffer)
+   >>> img = Image.open(byteio)
+   >>> img.show()
 
 .. _comment:
 .. attribute:: comment
