@@ -110,7 +110,7 @@ It provides convenient methods for the manipulation of EXIF, IPTC and XMP metada
 .. _buffer:
 .. attribute:: buffer
 
-   Return the image data as bytes.  This is useful to reduce disk acces, the data can be send to an image library.
+   Return the image data as bytes.  This is useful to reduce disk access, the data can be send to an image library.
 
    Example with Pillow::
 
@@ -406,6 +406,7 @@ The :class:`ExifTag` define an EXIF tag.
 
 * :ref:`extension <extension>`
 * :ref:`mime_type <mimetyp>`
+* :ref:`data <data>`
 
 **Instance Method**
 
@@ -442,6 +443,23 @@ class pyexiv2.exif.ExifThumbnail(_metadata)
 .. attribute:: mime_type
 
    The mime type of the preview image (e.g. image/jpeg).
+
+.. _data:
+.. data
+
+   The preview data as a Python list. The data can be send to an image library.
+
+   Example with Pillow::
+
+   >>> from PIL import Image
+   >>> import io
+   >>> from pyexiv2 import ImageMetadata, exif
+   >>> meta = ImageMetadata("lena.jpg")
+   >>> meta.read()
+   >>> thumb = exif.ExifThumbnail(meta)
+   >>> byteio = io.BytesIO(bytes(thumb.data))
+   >>> img = Image.open(byteio)
+   >>> img.show()
 
 
 **Methods**
