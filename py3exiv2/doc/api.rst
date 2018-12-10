@@ -445,7 +445,7 @@ class pyexiv2.exif.ExifThumbnail(_metadata)
    The mime type of the preview image (e.g. image/jpeg).
 
 .. _data:
-.. data
+.. data:: data
 
    The preview data as a Python list. The data can be send to an image library.
 
