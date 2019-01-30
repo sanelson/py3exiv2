@@ -85,7 +85,6 @@ void Image::_instantiate_image()
 #ifdef HAVE_EXIV2_ERROR_CODE
     catch (Exiv2::Error& err) 
     {
-        std::cout << err.code() << " Caught Exiv2 exception '" << err << "'\n";
         error = err;
     }
 #else
@@ -105,7 +104,6 @@ void Image::_instantiate_image()
     }
     else
     {
-        std::cout << "Now throw error \n";
         throw error;
     }
 }
@@ -176,7 +174,6 @@ void Image::readMetadata()
 #ifdef HAVE_EXIV2_ERROR_CODE
     catch (Exiv2::Error& err) 
     {
-        std::cout << err.code() << " Caught Exiv2 exception '" << err << "'\n";
         error = err;
     }
 #else
@@ -191,7 +188,6 @@ void Image::readMetadata()
 
     if (error.code() != 0)
     {
-        std::cout << "Now throw error \n";
         throw error;
     }
 }
@@ -219,7 +215,6 @@ void Image::writeMetadata()
 #ifdef HAVE_EXIV2_ERROR_CODE
     catch (Exiv2::Error& err) 
     {
-        std::cout << err.code() << "Caught Exiv2 exception '" << err << "'\n";
         error = err;
     }
 #else
@@ -234,7 +229,6 @@ void Image::writeMetadata()
 
     if (error.code() != 0)
     {
-        std::cout << "Now throw error \n";
         throw error;
     }
 }
@@ -707,8 +701,6 @@ void ExifTag::setRawValue(const std::string& value)
         std::string message("Invalid value: ");
         message += value;
         throw Exiv2::Error(Exiv2::kerInvalidDataset, message);
-        //PyErr_SetString(PyExc_ValueError, message);
-        //return;
     }
 #else
     {

@@ -3,7 +3,7 @@
 # ******************************************************************************
 #
 # Copyright (C) 2010 Olivier Tilloy <olivier@tilloy.net>
-# Copyright (C) 2015-2018 Vincent Vande Vyvre <vincent.vandevyvre@oqapy.eu>
+# Copyright (C) 2015-2019 Vincent Vande Vyvre <vincent.vandevyvre@oqapy.eu>
 #
 # This file is part of the py3exiv2 distribution.
 #
