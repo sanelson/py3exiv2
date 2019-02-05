@@ -154,6 +154,7 @@ class Preview
 public:
     Preview(const Exiv2::PreviewImage& previewImage);
 
+    boost::python::object getData() const;
     void writeToFile(const std::string& path) const;
 
     std::string _mimeType;
@@ -161,6 +162,7 @@ public:
     unsigned int _size;
     boost::python::tuple _dimensions;
     std::string _data;
+    const Exiv2::byte* pData;
 };
 
 

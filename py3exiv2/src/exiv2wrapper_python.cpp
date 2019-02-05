@@ -109,6 +109,7 @@ BOOST_PYTHON_MODULE(libexiv2python)
         .def_readonly("dimensions", &Preview::_dimensions)
         .def_readonly("data", &Preview::_data)
 
+        .def("get_data", &Preview::getData)
         .def("write_to_file", &Preview::writeToFile)
     ;
 

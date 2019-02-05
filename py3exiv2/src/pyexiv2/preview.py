@@ -68,14 +68,12 @@ class Preview(object):
         """
         return self.__preview.dimensions
 
-    #@property
-    #def data(self):
-        #"""The preview image data buffer.
+    @property
+    def data(self):
+        """The preview image data buffer.
 
-        #"""
-        # TODO
-        #buf = bytes(self.__preview.data)
-        #return buf
+        """
+        return self.__preview.get_data()
 
     def write_to_file(self, path):
         """Write the preview image to a file on disk.
