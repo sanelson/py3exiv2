@@ -775,7 +775,7 @@ pyexiv2.preview
 * :ref:`extension <extension1>`
 * :ref:`mime_type <mime_type1>`
 * :ref:`size <size>`
-* :ref:`data <data>`
+* :ref:`data <data1>`
 
 
 **Instance Method**
@@ -818,7 +818,7 @@ The :class:`Preview` define a preview image (properties and data buffer) embedde
 
       The size of the preview image in bytes.
 
-.. __data:
+.. _data1:
 .. attribute:: data
 
    The preview data as a Python list. The data can be send to an image library.
