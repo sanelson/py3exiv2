@@ -1,5 +1,8 @@
 PYTHON3-EXIV2
 
+Change in 0.6.0  Tue, 05 feb 2019
+ * Add the streaming of the preview data
+
 Change in 0.5.0  Wed, 30 Jan 2019
  * Update for libexiv2-0.27
 

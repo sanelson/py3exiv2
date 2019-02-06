@@ -1,33 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>API documentation &mdash; py3exiv2 0.3.0 documentation</title>
-    
+    <title>API documentation &#8212; py3exiv2 0.3.0 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '0.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="py3exiv2 0.3.0 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tutorial" href="tutorial.html" />
     <link rel="prev" title="Welcome to py3exiv2’s documentation!" href="index.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -40,7 +39,7 @@
         <li class="right" >
           <a href="index.html" title="Welcome to py3exiv2’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -56,10 +55,10 @@
 <p>The top-level module <code class="xref py py-class docutils literal"><span class="pre">pyexiv2</span></code>.</p>
 <p><strong>Attributes</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#versioninfo"><span>version_info</span></a></li>
-<li><a class="reference internal" href="#version"><span>__version__</span></a></li>
-<li><a class="reference internal" href="#exiv2versioninfo"><span>exiv2_version_info</span></a></li>
-<li><a class="reference internal" href="#exiv2-version"><span>__exiv2_version__</span></a></li>
+<li><a class="reference internal" href="#versioninfo"><span class="std std-ref">version_info</span></a></li>
+<li><a class="reference internal" href="#version"><span class="std std-ref">__version__</span></a></li>
+<li><a class="reference internal" href="#exiv2versioninfo"><span class="std std-ref">exiv2_version_info</span></a></li>
+<li><a class="reference internal" href="#exiv2-version"><span class="std std-ref">__exiv2_version__</span></a></li>
 </ul>
 <p><strong>Description</strong></p>
 <p>Top-level module. All other modules are imported from <code class="xref py py-class docutils literal"><span class="pre">pyexiv2</span></code>.</p>
@@ -99,15 +98,15 @@
 
 <p><strong>Instance Attributes</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#buffer"><span>buffer</span></a></li>
-<li><a class="reference internal" href="#comment"><span>comment</span></a></li>
-<li><a class="reference internal" href="#dimensions"><span>dimensions</span></a></li>
-<li><a class="reference internal" href="#exifkeys"><span>exif_keys</span></a></li>
-<li><a class="reference internal" href="#iptccharset"><span>iptc_charset</span></a></li>
-<li><a class="reference internal" href="#iptckeys"><span>iptc_keys</span></a></li>
-<li><a class="reference internal" href="#mimetype"><span>mime_type</span></a></li>
-<li><a class="reference internal" href="#previews"><span>previews</span></a></li>
-<li><a class="reference internal" href="#xmpkeys"><span>xmp_keys</span></a></li>
+<li><a class="reference internal" href="#buffer"><span class="std std-ref">buffer</span></a></li>
+<li><a class="reference internal" href="#comment"><span class="std std-ref">comment</span></a></li>
+<li><a class="reference internal" href="#dimensions"><span class="std std-ref">dimensions</span></a></li>
+<li><a class="reference internal" href="#exifkeys"><span class="std std-ref">exif_keys</span></a></li>
+<li><a class="reference internal" href="#iptccharset"><span class="std std-ref">iptc_charset</span></a></li>
+<li><a class="reference internal" href="#iptckeys"><span class="std std-ref">iptc_keys</span></a></li>
+<li><a class="reference internal" href="#mimetype"><span class="std std-ref">mime_type</span></a></li>
+<li><a class="reference internal" href="#previews"><span class="std std-ref">previews</span></a></li>
+<li><a class="reference internal" href="#xmpkeys"><span class="std std-ref">xmp_keys</span></a></li>
 </ul>
 <p><strong>Instance Methods</strong></p>
 <ul class="simple">
@@ -147,9 +146,9 @@
 <span class="target" id="buffer"></span><dl class="attribute">
 <dt>
 <code class="descname">buffer</code></dt>
-<dd><p>Return the image data as bytes.  This is useful to reduce disk acces, the data can be send to an image library.</p>
+<dd><p>Return the image data as bytes.  This is useful to reduce disk access, the data can be send to an image library.</p>
 <p>Example with Pillow:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyexiv2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">pyexiv2</span><span class="o">.</span><span class="n">ImageMetadata</span><span class="p">(</span><span class="s2">&quot;lena.jpg&quot;</span><span class="p">)</span>
@@ -254,11 +253,11 @@ it will be erased in the destination, unless explicitly omitted.</p>
 <p>The values are returned as a dict which contains:</p>
 <blockquote>
 <div><ul class="simple">
-<li><em>&#8220;iso&#8221;</em>: the ISO value</li>
-<li><em>&#8220;speed&#8221;</em>: the exposure time</li>
-<li><em>&#8220;focal&#8221;</em>: the focal length</li>
-<li><em>&#8220;aperture&#8221;</em>: the fNumber</li>
-<li><em>&#8220;orientation&#8221;</em>: the orientation of the image</li>
+<li><em>“iso”</em>: the ISO value</li>
+<li><em>“speed”</em>: the exposure time</li>
+<li><em>“focal”</em>: the focal length</li>
+<li><em>“aperture”</em>: the fNumber</li>
+<li><em>“orientation”</em>: the orientation of the image</li>
 </ul>
 </div></blockquote>
 <p>When a tag is not set, the value will be None.</p>
@@ -309,12 +308,12 @@ it will be erased in the destination, unless explicitly omitted.</p>
 <p>The values are returned as a dict which contains:</p>
 <blockquote>
 <div><ul class="simple">
-<li><em>&#8220;creator&#8221;</em>: the value of Xmp.dc.creator</li>
-<li><em>&#8220;artist&#8221;</em>: the value of Exif.Image.Artist</li>
-<li><em>&#8220;rights&#8221;</em>: the value of Xmp.dc.rights</li>
-<li><em>&#8220;copyright&#8221;</em>: the value of Exif.Image.Copyright</li>
-<li><em>&#8220;marked&#8221;</em>: the value of Xmp.xmpRights.Marked</li>
-<li><em>&#8220;usage&#8221;</em>: the value of Xmp.xmpRights.UsageTerms</li>
+<li><em>“creator”</em>: the value of Xmp.dc.creator</li>
+<li><em>“artist”</em>: the value of Exif.Image.Artist</li>
+<li><em>“rights”</em>: the value of Xmp.dc.rights</li>
+<li><em>“copyright”</em>: the value of Exif.Image.Copyright</li>
+<li><em>“marked”</em>: the value of Xmp.xmpRights.Marked</li>
+<li><em>“usage”</em>: the value of Xmp.xmpRights.UsageTerms</li>
 </ul>
 </div></blockquote>
 <p>When a tag is not set, the value will be None.</p>
@@ -375,16 +374,16 @@ it will be erased in the destination, unless explicitly omitted.</p>
 
 <p><strong>Instance Attributes</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#description"><span>description</span></a></li>
-<li><a class="reference internal" href="#humanvalue"><span>human_value</span></a></li>
-<li><a class="reference internal" href="#key"><span>key</span></a></li>
-<li><a class="reference internal" href="#label"><span>label</span></a></li>
-<li><a class="reference internal" href="#name"><span>name</span></a></li>
-<li><a class="reference internal" href="#rawvalue"><span>raw_value</span></a></li>
-<li><a class="reference internal" href="#sectiondescription"><span>section_description</span></a></li>
-<li><a class="reference internal" href="#sectionname"><span>section_name</span></a></li>
-<li><a class="reference internal" href="#type"><span>type</span></a></li>
-<li><a class="reference internal" href="#value"><span>value</span></a></li>
+<li><a class="reference internal" href="#description"><span class="std std-ref">description</span></a></li>
+<li><a class="reference internal" href="#humanvalue"><span class="std std-ref">human_value</span></a></li>
+<li><a class="reference internal" href="#key"><span class="std std-ref">key</span></a></li>
+<li><a class="reference internal" href="#label"><span class="std std-ref">label</span></a></li>
+<li><a class="reference internal" href="#name"><span class="std std-ref">name</span></a></li>
+<li><a class="reference internal" href="#rawvalue"><span class="std std-ref">raw_value</span></a></li>
+<li><a class="reference internal" href="#sectiondescription"><span class="std std-ref">section_description</span></a></li>
+<li><a class="reference internal" href="#sectionname"><span class="std std-ref">section_name</span></a></li>
+<li><a class="reference internal" href="#type"><span class="std std-ref">type</span></a></li>
+<li><a class="reference internal" href="#value"><span class="std std-ref">value</span></a></li>
 </ul>
 <p><strong>Description</strong></p>
 <p>The <code class="xref py py-class docutils literal"><span class="pre">ExifTag</span></code> define an EXIF tag.</p>
@@ -496,8 +495,9 @@ it will be erased in the destination, unless explicitly omitted.</p>
 
 <p><strong>Instance Attributes</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#extension"><span>extension</span></a></li>
-<li><a class="reference internal" href="#mimetyp"><span>mime_type</span></a></li>
+<li><a class="reference internal" href="#extension"><span class="std std-ref">extension</span></a></li>
+<li><a class="reference internal" href="#mimetyp"><span class="std std-ref">mime_type</span></a></li>
+<li><a class="reference internal" href="#data"><span class="std std-ref">data</span></a></li>
 </ul>
 <p><strong>Instance Method</strong></p>
 <ul class="simple">
@@ -530,6 +530,24 @@ it will be erased in the destination, unless explicitly omitted.</p>
 <dt>
 <code class="descname">mime_type</code></dt>
 <dd><p>The mime type of the preview image (e.g. image/jpeg).</p>
+</dd></dl>
+
+<span class="target" id="data"></span><dl class="data">
+<dt>
+<code class="descname">data</code></dt>
+<dd><p>The preview data as a Python list. The data can be send to an image library.</p>
+<p>Example with Pillow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyexiv2</span> <span class="k">import</span> <span class="n">ImageMetadata</span><span class="p">,</span> <span class="n">exif</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">ImageMetadata</span><span class="p">(</span><span class="s2">&quot;lena.jpg&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">thumb</span> <span class="o">=</span> <span class="n">exif</span><span class="o">.</span><span class="n">ExifThumbnail</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">byteio</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">thumb</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">byteio</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <p><strong>Methods</strong></p>
@@ -575,17 +593,17 @@ it will be erased in the destination, unless explicitly omitted.</p>
 
 <p><strong>Instance Attributes</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#descript"><span>description</span></a></li>
-<li><a class="reference internal" href="#key1"><span>key</span></a></li>
-<li><a class="reference internal" href="#name1"><span>name</span></a></li>
-<li><a class="reference internal" href="#photoshopname"><span>photoshop_name</span></a></li>
-<li><a class="reference internal" href="#rawvalue1"><span>raw_value</span></a></li>
-<li><a class="reference internal" href="#recorddescription"><span>record_description</span></a></li>
-<li><a class="reference internal" href="#recordname"><span>record_name</span></a></li>
-<li><a class="reference internal" href="#repeatable"><span>repeatable</span></a></li>
-<li><a class="reference internal" href="#title"><span>title</span></a></li>
-<li><a class="reference internal" href="#type1"><span>type</span></a></li>
-<li><a class="reference internal" href="#value1"><span>value</span></a></li>
+<li><a class="reference internal" href="#descript"><span class="std std-ref">description</span></a></li>
+<li><a class="reference internal" href="#key1"><span class="std std-ref">key</span></a></li>
+<li><a class="reference internal" href="#name1"><span class="std std-ref">name</span></a></li>
+<li><a class="reference internal" href="#photoshopname"><span class="std std-ref">photoshop_name</span></a></li>
+<li><a class="reference internal" href="#rawvalue1"><span class="std std-ref">raw_value</span></a></li>
+<li><a class="reference internal" href="#recorddescription"><span class="std std-ref">record_description</span></a></li>
+<li><a class="reference internal" href="#recordname"><span class="std std-ref">record_name</span></a></li>
+<li><a class="reference internal" href="#repeatable"><span class="std std-ref">repeatable</span></a></li>
+<li><a class="reference internal" href="#title"><span class="std std-ref">title</span></a></li>
+<li><a class="reference internal" href="#type1"><span class="std std-ref">type</span></a></li>
+<li><a class="reference internal" href="#value1"><span class="std std-ref">value</span></a></li>
 </ul>
 <p><strong>Description</strong></p>
 <p>The <code class="xref py py-class docutils literal"><span class="pre">IptcTag</span></code> define an IPTC tag.</p>
@@ -762,13 +780,13 @@ it will be erased in the destination, unless explicitly omitted.</p>
 
 <p><strong>Instance Attributes</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#description2"><span>description</span></a></li>
-<li><a class="reference internal" href="#key2"><span>key</span></a></li>
-<li><a class="reference internal" href="#name2"><span>name</span></a></li>
-<li><a class="reference internal" href="#raw-value2"><span>raw_value</span></a></li>
-<li><a class="reference internal" href="#title2"><span>title</span></a></li>
-<li><a class="reference internal" href="#type2"><span>type</span></a></li>
-<li><a class="reference internal" href="#value2"><span>value</span></a></li>
+<li><a class="reference internal" href="#description2"><span class="std std-ref">description</span></a></li>
+<li><a class="reference internal" href="#key2"><span class="std std-ref">key</span></a></li>
+<li><a class="reference internal" href="#name2"><span class="std std-ref">name</span></a></li>
+<li><a class="reference internal" href="#raw-value2"><span class="std std-ref">raw_value</span></a></li>
+<li><a class="reference internal" href="#title2"><span class="std std-ref">title</span></a></li>
+<li><a class="reference internal" href="#type2"><span class="std std-ref">type</span></a></li>
+<li><a class="reference internal" href="#value2"><span class="std std-ref">value</span></a></li>
 </ul>
 <p><strong>Description</strong></p>
 <p>The <code class="xref py py-class docutils literal"><span class="pre">XmpTag</span></code> define an XMP tag.</p>
@@ -881,14 +899,15 @@ it will be erased in the destination, unless explicitly omitted.</p>
 
 <p><strong>Instance Attributes</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#dimensions1"><span>dimensions</span></a></li>
-<li><a class="reference internal" href="#extension1"><span>extension</span></a></li>
-<li><a class="reference internal" href="#mime-type1"><span>mime_type</span></a></li>
-<li><a class="reference internal" href="#size"><span>size</span></a></li>
+<li><a class="reference internal" href="#dimensions1"><span class="std std-ref">dimensions</span></a></li>
+<li><a class="reference internal" href="#extension1"><span class="std std-ref">extension</span></a></li>
+<li><a class="reference internal" href="#mime-type1"><span class="std std-ref">mime_type</span></a></li>
+<li><a class="reference internal" href="#size"><span class="std std-ref">size</span></a></li>
+<li><a class="reference internal" href="#data"><span class="std std-ref">data</span></a></li>
 </ul>
 <p><strong>Instance Method</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#write-to-file"><span>write_to_file(path)</span></a></li>
+<li><a class="reference internal" href="#write-to-file"><span class="std std-ref">write_to_file(path)</span></a></li>
 </ul>
 <p><strong>Description</strong></p>
 <p>The <code class="xref py py-class docutils literal"><span class="pre">Preview</span></code> define a preview image (properties and data buffer) embedded in image metadata.</p>
@@ -923,6 +942,26 @@ it will be erased in the destination, unless explicitly omitted.</p>
 <dt>
 <code class="descname">size</code></dt>
 <dd><p>The size of the preview image in bytes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">data</code></dt>
+<dd><p>The preview data as a Python list. The data can be send to an image library.</p>
+<p><em>New in version 0.6.0</em></p>
+<p>Example with Pillow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyexiv2</span> <span class="k">import</span> <span class="n">ImageMetadata</span><span class="p">,</span> <span class="n">exif</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">ImageMetadata</span><span class="p">(</span><span class="s2">&quot;lena.jpg&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># try with the first one</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">preview</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">previews</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">byteio</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">preview</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">byteio</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <p><strong>Method</strong></p>
@@ -962,28 +1001,25 @@ it will be erased in the destination, unless explicitly omitted.</p>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to py3exiv2&#8217;s documentation!</a></p>
+                        title="previous chapter">Welcome to py3exiv2’s documentation!</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="tutorial.html"
                         title="next chapter">Tutorial</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/api.txt"
+      <li><a href="_sources/api.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1002,12 +1038,12 @@ it will be erased in the destination, unless explicitly omitted.</p>
         <li class="right" >
           <a href="index.html" title="Welcome to py3exiv2’s documentation!"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015-2018 Vincent Vande Vyvre.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+        &#169; Copyright 2015-2018 Vincent Vande Vyvre.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

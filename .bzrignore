@@ -24,3 +24,5 @@ convert_utf8_to_ucs2
 error(027).cpp
 patch_exiv2_Exiv2_Error
 old_025_exiv2wrapper.cpp
+doc/_build
+doc/_build/*
