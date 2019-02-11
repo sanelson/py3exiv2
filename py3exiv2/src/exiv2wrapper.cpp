@@ -82,18 +82,11 @@ void Image::_instantiate_image()
         }
     }
 
-#ifdef HAVE_EXIV2_ERROR_CODE
     catch (Exiv2::Error& err) 
     {
+        //std::cout << " Caught Exiv2 exception '" << err.code() << "'\n";
         error = err;
     }
-#else
-    catch (Exiv2::Error& err)
-    {
-        std::cout << "Caught Exiv2 exception '" << err << "'\n";
-        error = err;
-    }
-#endif
     // Re-acquire the GIL
     Py_END_ALLOW_THREADS
 
@@ -171,17 +164,12 @@ void Image::readMetadata()
         _xmpData = &_image->xmpData();
         _dataRead = true;
     }
-#ifdef HAVE_EXIV2_ERROR_CODE
+
     catch (Exiv2::Error& err) 
     {
+        //std::cout << " Caught Exiv2 exception '" << err.code() << "'\n";
         error = err;
     }
-#else
-    catch (Exiv2::Error& err)
-    {
-        error = err;
-    }
-#endif
 
     // Re-acquire the GIL
     Py_END_ALLOW_THREADS
@@ -212,17 +200,12 @@ void Image::writeMetadata()
     {
         _image->writeMetadata();
     }
-#ifdef HAVE_EXIV2_ERROR_CODE
+
     catch (Exiv2::Error& err) 
     {
+        //std::cout << "Caught Exiv2 exception '" << err.code() << "'\n";
         error = err;
     }
-#else
-    catch (Exiv2::Error& err)
-    {
-        error = err;
-    }
-#endif
 
     // Re-acquire the GIL
     Py_END_ALLOW_THREADS
@@ -515,7 +498,7 @@ boost::python::object Image::getDataBuffer() const
 
     // Copy the data buffer in a string. Since the data buffer can contain null
     // characters ('\x00'), the string cannot be simply constructed like that:
-    //     _data = std::string((char*) previewImage.pData());
+    //     buffer = std::string((char*) previewImage.pData());
     // because it would be truncated after the first occurence of a null
     // character. Therefore, it has to be copied character by character.
     // First allocate the memory for the whole string...
@@ -588,7 +571,6 @@ boost::python::list Image::getExifThumbnailData()
     }
     return data;
 }
-
 
 void Image::eraseExifThumbnail()
 {
@@ -1191,6 +1173,7 @@ Preview::Preview(const Exiv2::PreviewImage& previewImage)
     _size = previewImage.size();
     _dimensions = boost::python::make_tuple(previewImage.width(),
                                             previewImage.height());
+
     // Copy the data buffer in a string. Since the data buffer can contain null
     // characters ('\x00'), the string cannot be simply constructed like that:
     //     _data = std::string((char*) previewImage.pData());
@@ -1206,6 +1189,13 @@ Preview::Preview(const Exiv2::PreviewImage& previewImage)
     }
 }
 
+boost::python::object Preview::getData() const
+{
+    return boost::python::object(boost::python::handle<>(
+        PyBytes_FromStringAndSize(_data.c_str(), _size)
+        ));
+}
+
 void Preview::writeToFile(const std::string& path) const
 {
     std::string filename = path + _extension;
@@ -1219,10 +1209,7 @@ void translateExiv2Error(Exiv2::Error const& error)
 {
     // Use the Python 'C' API to set up an exception object
     const char* message = error.what();
-    int code = error.code();
-    printf("%s: %d\n", message, code);
-    //int code = error.code();
-    //message += (char *) code;
+
     // The type of the Python exception depends on the error code
     // Warning: this piece of code should be updated in case the error codes
     // defined by Exiv2 (file 'src/error.cpp') are changed
