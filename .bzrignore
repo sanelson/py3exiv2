@@ -26,3 +26,6 @@ patch_exiv2_Exiv2_Error
 old_025_exiv2wrapper.cpp
 doc/_build
 doc/_build/*
+coredump.py
+py3exiv2/dist/
+py3exiv2/src/py3exiv2.egg-info/

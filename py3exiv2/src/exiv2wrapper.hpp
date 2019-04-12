@@ -29,8 +29,8 @@
 
 #include <string>
 
-#include "/home/vincent/CPython/py370_venv/include/exiv2/image.hpp"
-#include "/home/vincent/CPython/py370_venv/include/exiv2/preview.hpp"
+#include "exiv2/image.hpp"
+#include "exiv2/preview.hpp"
 
 #include "boost/python.hpp"
 
