@@ -285,6 +285,8 @@ void translateExiv2Error(Exiv2::Error const& error);
 
 
 // Functions to manipulate custom XMP namespaces
+bool initialiseXmpParser();
+bool closeXmpParser();
 void registerXmpNs(const std::string& name, const std::string& prefix);
 void unregisterXmpNs(const std::string& name);
 void unregisterAllXmpNs();

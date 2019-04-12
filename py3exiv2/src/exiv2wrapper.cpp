@@ -1835,6 +1835,43 @@ void translateExiv2Error(Exiv2::Error const& error)
 }
 #endif
 
+bool initialiseXmpParser()
+{
+    if (!Exiv2::XmpParser::initialize())
+        return false;
+
+    std::string prefix("py3exiv2");
+    std::string name("www.py3exiv2.tuxfamily.org/");
+
+    try
+    {
+        const std::string& ns = Exiv2::XmpProperties::ns(prefix);
+    }
+
+    catch (Exiv2::Error& error)
+    {
+        // No namespace exists with the requested prefix, it is safe to
+        // register a new one.
+        Exiv2::XmpProperties::registerNs(name, prefix);
+        return;
+    }
+
+    return true;
+}
+
+bool closeXmpParser()
+{
+    std::string name("www.py3exiv2.tuxfamily.org/");
+    const std::string& prefix = Exiv2::XmpProperties::prefix(name);
+    if (prefix != "")
+    {
+        Exiv2::XmpProperties::unregisterNs(name);
+    }
+
+    Exiv2::XmpParser::terminate();
+
+    return true;
+}
 
 void registerXmpNs(const std::string& name, const std::string& prefix)
 {

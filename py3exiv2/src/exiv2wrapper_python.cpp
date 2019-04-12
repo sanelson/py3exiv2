@@ -157,6 +157,8 @@ BOOST_PYTHON_MODULE(libexiv2python)
         .def("_getIptcCharset", &Image::getIptcCharset)
     ;
 
+    def("_initialiseXmpParser", initialiseXmpParser);
+    def("_closeXmpParser", closeXmpParser);
     def("_registerXmpNs", registerXmpNs, args("name", "prefix"));
     def("_unregisterXmpNs", unregisterXmpNs, args("name"));
     def("_unregisterAllXmpNs", unregisterAllXmpNs);
