@@ -522,6 +522,33 @@ class XmpTag(object):
         self._tag = libexiv2python._XmpTag(key)
         self.raw_value = raw_value
 
+def initialiseXmpParser():
+    """Initialise the xmp parser.
+
+    Calling this method is usually not needed, as encode() and decode() will 
+    initialize the XMP Toolkit if necessary.
+
+    The function takes optional pointers to a callback function xmpLockFct and 
+    related data pLockData that the parser uses when XMP namespaces are 
+    subsequently registered.
+
+    This function itself still is not thread-safe and needs to be 
+    called in a thread-safe manner (e.g., on program startup), but if used with 
+    suitable additional locking parameters, any subsequent registration of 
+    namespaces will be thread-safe.
+    """
+    libexiv2python._initialiseXmpParser()
+
+def closeXmpParser():
+    """Close the xmp parser.
+
+    Terminate the XMP Toolkit and unregister custom namespaces.
+
+    Call this method when the XmpParser is no longer needed to allow the XMP 
+    Toolkit to cleanly shutdown. 
+    """
+    libexiv2python._closeXmpParser()
+
 
 def register_namespace(name, prefix):
     """Register a custom XMP namespace.

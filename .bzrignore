@@ -5,6 +5,7 @@ pickling.py
 test_py2.py
 bytearray_vectorC++
 data.txt
+diffs
 docs
 docs/*
 packaging

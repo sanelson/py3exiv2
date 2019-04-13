@@ -1,6 +1,9 @@
 PYTHON3-EXIV2
 
-Change in 0.6.0  Tue, 05 feb 2019
+Change in 0.7.0  Sat, 13 Apr 2019
+ * Add the initialiseXmpParser and closeXmpParser functions
+
+Change in 0.6.0  Tue, 05 Feb 2019
  * Add the streaming of the preview data
 
 Change in 0.5.0  Wed, 30 Jan 2019

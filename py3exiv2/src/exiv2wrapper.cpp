@@ -1853,7 +1853,6 @@ bool initialiseXmpParser()
         // No namespace exists with the requested prefix, it is safe to
         // register a new one.
         Exiv2::XmpProperties::registerNs(name, prefix);
-        return;
     }
 
     return true;
