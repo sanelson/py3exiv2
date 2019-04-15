@@ -16,7 +16,7 @@ Build dependencies
 
 py3exiv2 depends on the following libraries:
 
- * python (≥ 3.2)
+ * python (≥ 3.3)
  * boost.python3 (http://www.boost.org/libs/python/doc/index.html)
  * exiv2 (http://www.exiv2.org/)
 
@@ -26,7 +26,7 @@ those are optional dependencies.
 
 This is a typical list of build dependencies for a Debian/Ubuntu system:
 
- * python-all-dev (≥ 3.2)
+ * python-all-dev (≥ 3.3)
  * libexiv2-dev (≥ 0.20)
  * libboost-python-dev (≥ 1.48)
  * g++
@@ -76,7 +76,7 @@ License
 =======
 
 Copyright (C) 2006-2011 Olivier Tilloy <olivier@tilloy.net>
-Copyright (C) 2015-2016 Vincent Vande Vyvre <vincent.vandevyvre@oqapy.eu>
+Copyright (C) 2015-2019 Vincent Vande Vyvre <vincent.vandevyvre@oqapy.eu>
 
 py3exiv2 is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License version 3 as published by the Free

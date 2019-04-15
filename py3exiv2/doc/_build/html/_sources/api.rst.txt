@@ -611,7 +611,29 @@ The :class:`IptcTag` define an IPTC tag.
 pyexiv2.xmp
 ###########
 
-This module provides the classes :class:`XmpTag` and :class:`XmpValueError` and the following three functions to handle the XMP name spaces.
+This module provides the classes :class:`XmpTag` and :class:`XmpValueError` and the following five functions to handle the XMP parser and name spaces.
+
+
+.. function:: pyexiv2.xmp.initialiseXmpParser()
+
+   Initialise the xmp parser.
+
+   Calling this method is usually not needed, as encode() and decode() will 
+   initialize the XMP Toolkit if necessary.
+
+   This function itself still is not thread-safe and needs to be 
+   called in a thread-safe manner (e.g., on program startup).
+
+
+.. function:: pyexiv2.xmp.closeXmpParser()
+
+   Close the xmp parser.
+
+   Terminate the XMP Toolkit and unregister custom namespaces.
+
+   Call this method when the XmpParser is no longer needed to allow the XMP 
+   Toolkit to cleanly shutdown.
+
 
 .. function:: pyexiv2.xmp.register_namespace(name, prefix)
 

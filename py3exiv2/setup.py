@@ -22,7 +22,7 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 setup(
     name='py3exiv2',
-    version='0.6.2',
+    version='0.7.0',
     description='A Python3 binding to the library exiv2',
     long_description=long_description,
     url='https://launchpad.net/py3exiv2',
@@ -42,6 +42,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8'
     ],
     keywords='exiv2 pyexiv2 EXIF IPTC XMP image metadata',
     packages = find_packages('src'),

@@ -722,7 +722,26 @@ it will be erased in the destination, unless explicitly omitted.</p>
 </div>
 <div class="section" id="pyexiv2-xmp">
 <h2>pyexiv2.xmp<a class="headerlink" href="#pyexiv2-xmp" title="Permalink to this headline">¶</a></h2>
-<p>This module provides the classes <code class="xref py py-class docutils literal"><span class="pre">XmpTag</span></code> and <code class="xref py py-class docutils literal"><span class="pre">XmpValueError</span></code> and the following three functions to handle the XMP name spaces.</p>
+<p>This module provides the classes <code class="xref py py-class docutils literal"><span class="pre">XmpTag</span></code> and <code class="xref py py-class docutils literal"><span class="pre">XmpValueError</span></code> and the following five functions to handle the XMP parser and name spaces.</p>
+<dl class="function">
+<dt id="pyexiv2.xmp.initialiseXmpParser">
+<code class="descclassname">pyexiv2.xmp.</code><code class="descname">initialiseXmpParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.initialiseXmpParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise the xmp parser.</p>
+<p>Calling this method is usually not needed, as encode() and decode() will
+initialize the XMP Toolkit if necessary.</p>
+<p>This function itself still is not thread-safe and needs to be
+called in a thread-safe manner (e.g., on program startup).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyexiv2.xmp.closeXmpParser">
+<code class="descclassname">pyexiv2.xmp.</code><code class="descname">closeXmpParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.closeXmpParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the xmp parser.</p>
+<p>Terminate the XMP Toolkit and unregister custom namespaces.</p>
+<p>Call this method when the XmpParser is no longer needed to allow the XMP
+Toolkit to cleanly shutdown.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="pyexiv2.xmp.register_namespace">
 <code class="descclassname">pyexiv2.xmp.</code><code class="descname">register_namespace</code><span class="sig-paren">(</span><em>name</em>, <em>prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.register_namespace" title="Permalink to this definition">¶</a></dt>
