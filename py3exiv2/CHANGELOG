@@ -1,5 +1,8 @@
 PYTHON3-EXIV2
 
+Change in 0.7.1  Sat, 28 May 2019
+ * Minor changes in order to compile on OS X platform
+
 Change in 0.7.0  Sat, 13 Apr 2019
  * Add the initialiseXmpParser and closeXmpParser functions
 
