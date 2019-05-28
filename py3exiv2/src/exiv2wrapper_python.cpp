@@ -24,6 +24,8 @@
  */
 // *****************************************************************************
 
+#include<iostream>
+
 #include "exiv2wrapper.hpp"
 
 #include "exiv2/exv_conf.h"
