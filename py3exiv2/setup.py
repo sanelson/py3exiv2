@@ -8,6 +8,7 @@ import sys
 import os
 import glob
 import subprocess
+import platform
 
 from setuptools import setup, find_packages, Extension
 
@@ -19,6 +20,25 @@ here = path.abspath(path.dirname(__file__))
 # Get the long description from the relevant file
 with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
     long_description = f.read()
+
+def get_libboost_osx():
+    places = ["/usr/local/lib/"]
+    for place in places:
+        lib = place + "libboost_python3*.dylib"
+        files = glob.glob(lib)
+        for f in files:
+            if not "-mt" in f:
+                return os.path.basename(f).replace("lib", "").split(".")[0]
+            
+        print("NOT FOUND", files)
+        sys.exit()
+    
+if platform.system() == "Darwin":
+    boostlib = get_libboost_osx()
+    print(boostlib)
+
+else:
+    boostlib = 'boost_python3'
 
 setup(
     name='py3exiv2',
@@ -52,7 +72,7 @@ setup(
     ext_modules=[
     Extension('libexiv2python',
         ['src/exiv2wrapper.cpp', 'src/exiv2wrapper_python.cpp'],
-        libraries=['boost_python3', 'exiv2'],
+        libraries=[boostlib, 'exiv2'],
         extra_compile_args=['-g']
         )
     ],
