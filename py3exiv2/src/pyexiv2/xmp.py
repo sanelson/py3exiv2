@@ -566,6 +566,8 @@ def register_namespace(name, prefix):
     Raise ValueError: if the name doesn’t end with a ``/``
     Raise KeyError: if a namespace already exist with this prefix
     """
+    # How to set the type of tag 'XmpAlt', 'XmpBag', 'XmpSeq'
+    # See: https://www.exiv2.org/doc/xmpsample_8cpp-example.html#a18
     if not name.endswith('/'):
         raise ValueError('Name should end with a /')
 
