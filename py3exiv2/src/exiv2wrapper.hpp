@@ -30,8 +30,6 @@
 #include <string>
 
 #include "exiv2/exiv2.hpp"
-#include "exiv2/image.hpp"
-#include "exiv2/preview.hpp"
 
 #include "boost/python.hpp"
 
