@@ -27,3 +27,18 @@ User enaut cloned the same repo here https://github.com/enaut/py3exiv2
 > It is done using git clone "bzr::lp:py3exiv2"
 >
 > This command requires https://github.com/felipec/git-remote-bzr to be installed
+
+# Building
+
+During testing I built the module by changing to the py3exiv2 directory (root level setup.py is non-functional in its current location and may just need to be removed).
+
+
+```
+cd py3exiv2
+```
+
+I then ran a local install of the module so as not to pollute my system python libraries while testing.
+
+```
+python3 setup.py install --prefix=~/.local
+```
