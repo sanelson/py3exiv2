@@ -42,3 +42,23 @@ I then ran a local install of the module so as not to pollute my system python l
 ```
 python3 setup.py install --prefix=~/.local
 ```
+
+# Test install with Pip3
+
+After collapsing the directory structure, the module will build just fine with pip3.  Here's how I pip installed to my local install destination directly from the git repo.
+
+```
+pip3 install --user -e git://github.com/sanelson/py3exiv2.git@fix_libboost_python_build#egg=py3exiv2
+```
+
+Output from the installation process
+
+```
+Obtaining py3exiv2 from git+git://github.com/sanelson/py3exiv2.git@fix_libboost_python_build#egg=py3exiv2
+  Cloning git://github.com/sanelson/py3exiv2.git (to revision fix_libboost_python_build) to ./src/py3exiv2
+Branch 'fix_libboost_python_build' set up to track remote branch 'fix_libboost_python_build' from 'origin'.
+Switched to a new branch 'fix_libboost_python_build'
+Installing collected packages: py3exiv2
+  Running setup.py develop for py3exiv2
+Successfully installed py3exiv2
+```
