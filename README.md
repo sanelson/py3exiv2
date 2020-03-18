@@ -21,3 +21,9 @@ bzr push --lossy -v git@github.com:sanelson/py3exiv2.git,branch=master
 ```
 
 The push command complained about losing data and would not push without the "--lossy" option.  I assume this means some tags, etc are gone.
+
+User enaut cloned the same repo here https://github.com/enaut/py3exiv2
+
+> It is done using git clone "bzr::lp:py3exiv2"
+>
+> This command requires https://github.com/felipec/git-remote-bzr to be installed
