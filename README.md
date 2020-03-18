@@ -48,17 +48,20 @@ python3 setup.py install --prefix=~/.local
 After collapsing the directory structure, the module will build just fine with pip3.  Here's how I pip installed to my local install destination directly from the git repo.
 
 ```
-pip3 install --user -e git://github.com/sanelson/py3exiv2.git@fix_libboost_python_build#egg=py3exiv2
+pip3 install --user git+git://github.com/sanelson/py3exiv2.git@fix_libboost_python_build#egg=py3exiv2
 ```
 
 Output from the installation process
 
 ```
-Obtaining py3exiv2 from git+git://github.com/sanelson/py3exiv2.git@fix_libboost_python_build#egg=py3exiv2
-  Cloning git://github.com/sanelson/py3exiv2.git (to revision fix_libboost_python_build) to ./src/py3exiv2
+Collecting py3exiv2 from git+git://github.com/sanelson/py3exiv2.git@fix_libboost_python_build#egg=py3exiv2
+  Cloning git://github.com/sanelson/py3exiv2.git (to revision fix_libboost_python_build) to /tmp/pip-install-3ft5n2gu/py3exiv2
 Branch 'fix_libboost_python_build' set up to track remote branch 'fix_libboost_python_build' from 'origin'.
 Switched to a new branch 'fix_libboost_python_build'
+Building wheels for collected packages: py3exiv2
+  Running setup.py bdist_wheel for py3exiv2 ... done
+  Stored in directory: /tmp/pip-ephem-wheel-cache-ww8603z_/wheels/3a/07/68/ba3032131fbf748328b794931ce18e25c844e7a41343ccb966
+Successfully built py3exiv2
 Installing collected packages: py3exiv2
-  Running setup.py develop for py3exiv2
-Successfully installed py3exiv2
+Successfully installed py3exiv2-0.7.1
 ```
