@@ -21,6 +21,23 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
+def get_libboost_linux():
+    """Returns the name of the lib libboost_python 3 on Linux
+       adapted from get_libboost_name() in configure.py and get_libboost_osx() below
+
+    """
+    places = ['/usr/lib/*/', '/usr/local/lib/']
+    for place in places:
+        lib = place + "libboost_python3*.so"
+        files = glob.glob(lib)
+        for f in files:
+            if not "-mt" in f:
+                return os.path.basename(f).replace("lib", "").split(".")[0]
+            
+        print("NOT FOUND", files)
+        sys.exit()
+ 
+
 def get_libboost_osx():
     places = ["/usr/local/lib/"]
     for place in places:
@@ -36,7 +53,9 @@ def get_libboost_osx():
 if platform.system() == "Darwin":
     boostlib = get_libboost_osx()
     print(boostlib)
-
+elif platform.system() == "Linux":
+    boostlib = get_libboost_linux()
+    print(boostlib)
 else:
     boostlib = 'boost_python3'
 
