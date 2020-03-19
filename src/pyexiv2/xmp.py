@@ -402,6 +402,8 @@ class XmpTag(object):
                     value = str(value, 'utf-8')
                 except TypeError:
                     raise XmpValueError(value, type_)
+            elif value is None:
+                raise XmpValueError(value, type_)
             return value
 
         elif type_ == 'Thumbnail':

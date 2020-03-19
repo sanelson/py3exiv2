@@ -229,7 +229,7 @@ class TestXmpTag(unittest.TestCase):
         self.assertEqual(tag._convert_to_python('Python Software Foundation', 'ProperName'), 
                                                 'Python Software Foundation')
         # Invalid values
-        self.assertRaises(XmpValueError, tag._convert_to_python(None, 'ProperName'))
+        self.assertRaises(XmpValueError, tag._convert_to_python, None, 'ProperName')
 
     def test_convert_to_string_propername(self):
         # Valid values
@@ -249,7 +249,7 @@ class TestXmpTag(unittest.TestCase):
         self.assertEqual(tag._convert_to_python(b'Some text with exotic ch\xc3\xa0r\xc3\xa4ct\xc3\xa9r\xca\x90.', 'Text'),
                          'Some text with exotic chàräctérʐ.')
         # Invalid values
-        self.assertRaises(XmpValueError, tag._convert_to_python(None, 'Text'))
+        self.assertRaises(XmpValueError, tag._convert_to_python, None, 'Text')
 
     def test_convert_to_string_text(self):
         # Valid values
